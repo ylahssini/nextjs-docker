@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nextjsdocker:
+    build: ./.
+    image: nextjsdockerimage:latest
+    container_name: nextjsDockerContainer
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - "./app:/nextjs-docker/"
+    working_dir: /nextjs-docker
+    tty: true
+    stdin_open: true
